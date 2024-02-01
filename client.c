@@ -35,9 +35,7 @@ int main(int argc, char** argv) {
     server.sin_port = port;
     server.sin_family = AF_INET;
 
-    char *msg = "time";
-
-    if(sendto(s, msg, 12, 0, (struct sockaddr*)&server, sizeof(server)) < 0) {
+    if(sendto(s, "", 0, 0, (struct sockaddr*)&server, sizeof(server)) < 0) {
         perror("Send To error");
         exit(EXIT_FAILURE);
     }
